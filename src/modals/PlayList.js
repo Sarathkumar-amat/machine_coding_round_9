@@ -44,7 +44,7 @@ export function PlayList({setPlayList,videoObj})
             <h3>Add to Play list</h3>
             <AiOutlineClose onClick={()=>setPlayList(false)} style={{cursor:"pointer"}}/>
         </div>
-       {playlists.map(playlist=>
+       {playlists?.map(playlist=>
         <div>
             <input checked={checkInPlaylist(playlist)}  
             onChange={(e)=>handlePlaylistAdd(playlist,e)} type="checkbox" value={playlist} />{playlist?.name}
