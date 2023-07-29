@@ -1,0 +1,13 @@
+.route-container{
+    display: flex;
+    flex-direction: column;
+    margin-left:20px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.page-name{
+    margin: 15px;
+    color: black;
+    /* background-color: yellow; */
+    text-decoration-line: none;
+}

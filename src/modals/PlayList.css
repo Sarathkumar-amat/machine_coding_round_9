@@ -1,0 +1,25 @@
+.playlist-options-container{
+    position: absolute;
+    font-size: smaller;
+    width: 200px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.create-inputs{
+   display: flex;
+   flex-direction: column;
+}
+.create-button{
+    margin: auto;
+}
+.create-options{
+    margin: 10px;
+}

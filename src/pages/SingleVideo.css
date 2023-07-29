@@ -1,0 +1,19 @@
+.video-title-options{
+    display: flex;
+    justify-content: space-between;
+}
+.video-player{
+    width: 600px;
+}
+.time-icon,.playlist-icon{
+    font-size: x-large;
+    margin: 5px;
+    cursor: pointer;
+}
+.options{
+    display: flex;
+    flex-direction: row;
+}
+.playlist-modal-parent{
+    position: relative;
+}
