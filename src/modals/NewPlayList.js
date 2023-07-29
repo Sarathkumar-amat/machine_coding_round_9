@@ -10,12 +10,13 @@ export function NewPlayList({setPlayList})
     const addNewPlayList = (e)=>{
         e.preventDefault();
         if(newName!=="" && newDes!=="")
-        {
-            const newPlayList = {name:newName,description:newDes,videos:[]};
-            setPlayLists(prev=>[...prev,newPlayList]);
-            window.localStorage.setItem("allPlaylist",JSON.stringify(playlists));
-            setPlayList(false);
-        }
+            {
+                const newPlayList = {name:newName,description:newDes,videos:[videoObj]};
+                const newListOfPlaylist = playlists?[...playlists,newPlayList]:[newPlayList];
+                setPlayLists(newListOfPlaylist);
+                window.localStorage.setItem("allPlaylist",JSON.stringify(playlists));
+                setPlayList(false);
+            }
    
 }
     return (<div className="create-new-list-card">
