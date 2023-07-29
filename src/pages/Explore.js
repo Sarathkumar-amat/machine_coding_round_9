@@ -12,7 +12,7 @@ export function Explore()
    let displayVideos = videoData?.allVideos;
 
     return (<div>
-        <h1>Category Name</h1>
+        <h1>Explore</h1>
         <input type="text" placeholder="searh videos" onChange={(e)=>dispatchVideo({type:"set_searchText",payload:e.target.value})}/>
         <div className="video-container">{displayVideos?.map((videoObject)=>
         <div>
