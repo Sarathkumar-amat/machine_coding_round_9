@@ -21,7 +21,7 @@ export function VideoProvider({children})
     const allList = window.localStorage.getItem('allPlaylist');
     
     const [playlists,setPlayLists] = useState(JSON.parse(allList));
-    const watchLaterVideos = window.localStorage.getItem("later");
+    const watchLaterVideos = localStorage.getItem("later");
     const [watchLater,setWatchLater] = useState(JSON.parse(watchLaterVideos));
 
   
@@ -29,14 +29,14 @@ export function VideoProvider({children})
 
     useEffect(() => {
         const allList = window.localStorage.getItem('allPlaylist');
-        const laterVideos = window.localStorage.getItem('later');
+        const laterVideos = localStorage.getItem('later');
         setPlayLists(JSON.parse(allList));
         setWatchLater(JSON.parse(laterVideos));
       }, []);
     
       useEffect(() => {
         window.localStorage.setItem("allPlaylist",JSON.stringify(playlists));
-        window.localStorage.setItem("later",JSON.stringify(watchLater));
+        localStorage.setItem("later",JSON.stringify(watchLater));
       }, [watchLater]);
       console.log(watchLater);
     return (<div>
