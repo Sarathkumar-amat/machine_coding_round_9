@@ -18,7 +18,8 @@ export function VideoCard({videoObj})
     const addWatchLater = (videoId)=>{
         console.log("add watch later")
         const reqdObj = reqdVideos?.find(({_id})=>_id===videoId);
-        setWatchLater(prev=>[...prev,reqdObj]);
+        const newArr = watchLater?[...watchLater,reqdObj]:[reqdObj];
+        setWatchLater(newArr);
         localStorage.setItem("later",JSON.stringify(watchLater));
     }
     const removeWatchLater = (videoId)=>{
