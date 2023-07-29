@@ -9,9 +9,8 @@ export function VideoCard({videoObj})
 {
     const {_id,title,thumbnail,views,creator,category} = videoObj;
     const navigate = useNavigate();
-    const {categoryName} = useParams();
     const {videoData,watchLater,setWatchLater}=useContext(VideoContext);
-    const reqdVideos = videoData?.allVideos?.filter(({category})=>category===categoryName);
+    const reqdVideos = videoData?.allVideos;
 
     const checkWatchLater = (videoId)=>{
         return watchLater?.find(({_id})=>_id===videoId);
@@ -20,7 +19,7 @@ export function VideoCard({videoObj})
         console.log("add watch later")
         const reqdObj = reqdVideos?.find(({_id})=>_id===videoId);
         setWatchLater(prev=>[...prev,reqdObj]);
-        // localStorage.setItem("later",JSON.stringify(watchLater));
+        localStorage.setItem("later",JSON.stringify(watchLater));
     }
     const removeWatchLater = (videoId)=>{
         console.log("remove watch later")
