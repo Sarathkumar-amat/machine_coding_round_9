@@ -26,7 +26,7 @@ export function SingleVideo()
                     <BiTimeFive className="time-icon"/>
                 </div>
                 <div>
-                    <MdPlaylistAdd onClick={()=>setShowPlaylist(!showPlaylist)} className="playlist-icon"/>
+                    <MdPlaylistAdd onClick={()=>setShowPlaylist(prev=>!prev)} className="playlist-icon"/>
                     <div className="playlist-modal-parent">{showPlaylist && <PlayList setPlayList={setShowPlaylist} 
                     videoObj={reqdVideo}/>}</div>
                 </div>
