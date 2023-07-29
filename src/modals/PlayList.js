@@ -29,7 +29,8 @@ export function PlayList({setPlayList,videoObj})
             if(newName!=="" && newDes!=="")
             {
                 const newPlayList = {name:newName,description:newDes,videos:[videoObj]};
-                setPlayLists(prev=>[...prev,newPlayList]);
+                const newListOfPlaylist = playlists?[...playlists,newPlayList]:[newPlayList];
+                setPlayLists(newListOfPlaylist);
                 window.localStorage.setItem("allPlaylist",JSON.stringify(playlists));
                 setPlayList(false);
             }
