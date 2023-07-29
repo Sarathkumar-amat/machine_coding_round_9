@@ -36,8 +36,8 @@ export function VideoCard({videoObj})
             <div className="other-details">
                 <div className="video-details">{views} views | {creator}</div>
                 <div className="watch-later-add">
-                {!checkWatchLater(_id) && <BiTimeFive onClick={()=>addWatchLater(_id)} />}
-                {checkWatchLater(_id) && <BiSolidTimeFive onClick={()=>removeWatchLater(_id)}/>}
+                {!checkWatchLater(_id) && <BiTimeFive onClick={(_id)=>addWatchLater(_id)} />}
+                {checkWatchLater(_id) && <BiSolidTimeFive onClick={(_id)=>removeWatchLater(_id)}/>}
                 </div>
             </div>
             
