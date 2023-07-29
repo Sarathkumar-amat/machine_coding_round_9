@@ -7,7 +7,6 @@ import "./SingleCategory.css";
 export function Explore()
 {
     
-    
     const {videoData,dispatchVideo}=useContext(VideoContext);
    let displayVideos = videoData?.allVideos;
 
