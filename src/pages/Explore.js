@@ -9,6 +9,10 @@ export function Explore()
     
     const {videoData,dispatchVideo}=useContext(VideoContext);
    let displayVideos = videoData?.allVideos;
+   if(videoData?.searchText!=="")
+   {
+    displayVideos = displayVideos?.filter(({title})=>title.toUpperCase().includes(videoData?.searchText.toUpperCase()));
+   }
 
     return (<div>
         <h1>Explore</h1>
