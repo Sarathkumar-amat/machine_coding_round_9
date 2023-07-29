@@ -29,18 +29,18 @@ export function VideoCard({videoObj})
     }
 
     return (<div>
-        <div className="video-card">
+       {videoObj &&  <div className="video-card">
             <img onClick={()=>navigate(`/singleVideo/${_id}`)} className="video-image" src={thumbnail} alt="video-thumbnail" />
             <div className="video-name">{title}</div>
             <div className="video-name">{category}</div>
             <div className="other-details">
                 <div className="video-details">{views} views | {creator}</div>
                 <div className="watch-later-add">
-                {!checkWatchLater(_id) && <BiTimeFive onClick={(_id)=>addWatchLater(_id)} />}
-                {checkWatchLater(_id) && <BiSolidTimeFive onClick={(_id)=>removeWatchLater(_id)}/>}
+                {!checkWatchLater(videoObj?._id) && <BiTimeFive onClick={(_id)=>addWatchLater(videoObj?._id)} />}
+                {checkWatchLater(videoObj?._id) && <BiSolidTimeFive onClick={(_id)=>removeWatchLater(videoObj?._id)}/>}
                 </div>
             </div>
             
-            </div>
+            </div>}
     </div>)
 }
